@@ -59,6 +59,11 @@ function check_install_chef_solo {
   fi
 }
 
+function init_submodules {
+  git submodule init >/dev/null || clean_and_exit 1
+  git submodule update --quiet || clean_and_exit 1
+}
+
 echo -e "\033[1;32mMaking your Mac more awesome...\033[0m"
 
 # Working directory for file downloads
@@ -77,6 +82,7 @@ check_xcode
 
 log 'Checking for git'
 check_git
+init_submodules
 
 log 'Checking system ruby'
 check_system_ruby
