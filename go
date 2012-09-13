@@ -77,6 +77,11 @@ if [ "$?" -ne "0" ]; then
   clean_and_exit 1
 fi
 
+# Create /usr/local if it doesn't exist
+if [ ! -d "/usr/local" ]; then
+  sudo mkdir -p /usr/local
+fi
+
 log 'Checking for XCode installation'
 check_xcode
 
