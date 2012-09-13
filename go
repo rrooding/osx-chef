@@ -35,11 +35,33 @@ function check_git {
   fi
 }
 
+function check_system_ruby {
+  if [ ! "$(ruby -v | grep '1.8' 2>/dev/null)" ]; then
+    error 'Ruby 1.8 not found, this should be packaged with OSX'
+    exit 1
+  else
+    log 'Ruby 1.8 found, continuing...'
+  fi
+}
+
+function check_install_chef_solo {
+  if [ ! $(which chef-solo 2>/dev/null) ]; then
+    log 'Chef-solo not found, installing...'
+    gem install chef --no-ri --no-rdoc >/dev/null || exit 1
+  fi
+}
+
 log 'Checking for XCode installation'
 check_xcode
 
 log 'Checking for git'
 check_git
 
+log 'Checking system ruby'
+check_system_ruby
+
+log 'Checking for chef-solo'
+check_install_chef_solo
+
 log 'Starting Chef'
-chef-solo -c chef/config/solo.rb -j chef/config/ralphs-macbook-pro.json $*
+#chef-solo -c chef/config/solo.rb -j chef/config/ralphs-macbook-pro.json $*
