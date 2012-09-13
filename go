@@ -84,6 +84,11 @@ if [ ! -d "/usr/local" ]; then
   sudo chgrp admin /usr/local
 fi
 
+# Create ~/Library/LaunchAgents
+if [ ! -d "~/Library/LaunchAgents" ]; then
+  mkdir -p ~/Library/LaunchAgents
+fi
+
 log 'Checking for XCode installation'
 check_xcode
 

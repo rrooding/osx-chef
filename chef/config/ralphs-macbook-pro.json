@@ -1,7 +1,6 @@
 {
   "run_list": [
     "recipe[homebrew]",
-    "recipe[launchagents]",
 
     "recipe[mysql]",
 
