@@ -16,6 +16,12 @@ function pause {
   read -p "$*"
 }
 
+function clean_and_exit {
+  error 'Cleaning up and exiting'
+  rm -rf $WORK_DIR
+  exit $1
+}
+
 function check_xcode {
   if [ ! $(which xcode-select 2>/dev/null) ]; then
     error 'Xcode not found'
@@ -37,8 +43,8 @@ function check_git {
 
 function check_system_ruby {
   if [ ! "$(ruby -v | grep '1.8' 2>/dev/null)" ]; then
-    error 'Ruby 1.8 not found, this should be packaged with OSX'
-    exit 1
+    error 'Ruby 1.8 not found, this should be packaged with OS X'
+    clean_and_exit 1
   else
     log 'Ruby 1.8 found, continuing...'
   fi
@@ -47,9 +53,24 @@ function check_system_ruby {
 function check_install_chef_solo {
   if [ ! $(which chef-solo 2>/dev/null) ]; then
     log 'Chef-solo not found, installing...'
-    gem install chef --no-ri --no-rdoc >/dev/null || exit 1
+    sudo gem install chef --no-ri --no-rdoc >/dev/null || clean_and_exit 1
+  else
+    log 'Chef-solo found, continuing...'
   fi
 }
+
+echo -e "\033[1;32mMaking your Mac more awesome...\033[0m"
+
+# Working directory for file downloads
+WORK_DIR="/tmp/osx-chef-`date +%s`"
+mkdir -p $WORK_DIR
+
+# Ask for password upfront
+sudo -v
+if [ "$?" -ne "0" ]; then
+  error "We can't continue without a password"
+  clean_and_exit 1
+fi
 
 log 'Checking for XCode installation'
 check_xcode
@@ -64,4 +85,4 @@ log 'Checking for chef-solo'
 check_install_chef_solo
 
 log 'Starting Chef'
-#chef-solo -c chef/config/solo.rb -j chef/config/ralphs-macbook-pro.json $*
+chef-solo -c chef/config/solo.rb -j chef/config/ralphs-macbook-pro.json $*
