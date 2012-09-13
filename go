@@ -80,6 +80,8 @@ fi
 # Create /usr/local if it doesn't exist
 if [ ! -d "/usr/local" ]; then
   sudo mkdir -p /usr/local
+  sudo chmod g+rwx /usr/local
+  sudo chgrp admin /usr/local
 fi
 
 log 'Checking for XCode installation'
