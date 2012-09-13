@@ -10,7 +10,7 @@ end
 ruby_block 'copy mysql plist to ~/Library/LaunchAgents' do
   active_mysql = Pathname.new("/usr/local/bin/mysql").realpath
   plist_location = File.expand_path(File.join(active_mysql, '../../', 'homebrew.mxcl.mysql.plist'))
-  plist_destination = File.expand_path(File.join('~', 'Library', 'LaunchAgents'))
+  plist_destination = File.expand_path(File.join('~', 'Library', 'LaunchAgents', 'homebrew.mxcl.mysql.plist'))
   system "cp #{plist_location} #{plist_destination}"
   not_if { File.exists? plist_destination }
 end
