@@ -41,4 +41,5 @@ check_xcode
 log 'Checking for git'
 check_git
 
-#chef-solo -c chef/config/solo.rb -j chef/config/ralphs-macbook-pro.json $*
+log 'Starting Chef'
+chef-solo -c chef/config/solo.rb -j chef/config/ralphs-macbook-pro.json $*
