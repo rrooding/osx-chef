@@ -5,6 +5,7 @@
     "recipe[xquartz]",
     "recipe[wget]",
     "recipe[ack]",
+    "recipe[tk]",
     "recipe[rvm]",
 
     "recipe[mysql]",
