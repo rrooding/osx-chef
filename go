@@ -23,7 +23,7 @@ function clean_and_exit {
 }
 
 function check_xcode {
-  if [ ! $(which xcode-select 2>/dev/null) ]; then
+  if [ ! $(xcode-select --print-path 2>/dev/null) ]; then
     error 'Xcode not found'
     pause 'Please install Xcode 4.4.1. Press [enter] to continue...'
     check_xcode
