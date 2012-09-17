@@ -1,8 +1,6 @@
 require 'pathname'
 
-package 'mysql' do
-  action :upgrade
-end
+package 'mysql'
 
 execute 'Installing default mysql databases' do
   command 'mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp >/dev/null'
