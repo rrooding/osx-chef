@@ -9,6 +9,7 @@ execute 'Installing default mysql databases' do
 end
 
 ruby_block 'copy mysql plist to ~/Library/LaunchAgents' do
+  plist_destination = File.expand_path(File.join('~', 'Library', 'LaunchAgents', 'homebrew.mxcl.mysql.plist'))
 
   block do
     active_mysql = Pathname.new("/usr/local/bin/mysql").realpath
@@ -20,13 +21,11 @@ ruby_block 'copy mysql plist to ~/Library/LaunchAgents' do
 end
 
 service 'mysql' do
+  plist_destination = File.expand_path(File.join('~', 'Library', 'LaunchAgents', 'homebrew.mxcl.mysql.plist'))
+
   service_name 'homebrew.mxcl.mysql'
   supports :status => true
   action [ :enable, :start ]
 
   only_if { File.exists? plist_destination }
-end
-
-def plist_destination
-  File.expand_path(File.join('~', 'Library', 'LaunchAgents', 'homebrew.mxcl.mysql.plist'))
 end
