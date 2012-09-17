@@ -4,6 +4,7 @@
     "recipe[apple-gcc42]",
     "recipe[xquartz]",
     "recipe[wget]",
+    "recipe[rvm]",
 
     "recipe[mysql]",
 
