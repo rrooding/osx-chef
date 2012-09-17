@@ -1,6 +1,7 @@
 {
   "run_list": [
     "recipe[homebrew]",
+    "recipe[apple-gcc42]",
     "recipe[xquartz]",
 
     "recipe[mysql]",
