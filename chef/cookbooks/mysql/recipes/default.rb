@@ -1,6 +1,8 @@
 require 'pathname'
 
-package 'mysql'
+package 'mysql' do
+  action :upgrade
+end
 
 execute 'Installing default mysql databases' do
   command 'mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp >/dev/null'
@@ -24,7 +26,7 @@ service 'mysql' do
   plist_destination = File.expand_path(File.join('~', 'Library', 'LaunchAgents', 'homebrew.mxcl.mysql.plist'))
 
   service_name 'homebrew.mxcl.mysql'
-  supports :status => true
+  supports :status => true, :restart => true
   action [ :start ]
 
   only_if { File.exists? plist_destination }
