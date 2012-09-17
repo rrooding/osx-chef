@@ -9,4 +9,5 @@ dmg_package "XQuartz" do
   checksum node['xquartz']['checksum']
   volumes_dir "XQuartz-#{node['xquartz']['version']}"
   type 'pkg'
+  not_if { File.exists?("/opt/X11/bin/xquartz") }
 end
