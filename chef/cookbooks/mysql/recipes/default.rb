@@ -25,7 +25,7 @@ service 'mysql' do
 
   service_name 'homebrew.mxcl.mysql'
   supports :status => true
-  action [ :enable, :start ]
+  action [ :start ]
 
   only_if { File.exists? plist_destination }
 end
