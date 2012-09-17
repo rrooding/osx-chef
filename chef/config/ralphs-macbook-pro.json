@@ -4,6 +4,7 @@
 
     "recipe[mysql]",
 
+    "recipe[iterm2]",
     "recipe[tmux]"
   ]
 }

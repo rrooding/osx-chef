@@ -5,7 +5,7 @@ unless File.directory?("/Applications/iTerm.app")
   end
 
   execute 'unpack iTerm2' do
-    command "unzip #{Chef::Config[:file_cache_path]}/iTerm2-#{node['iterm2']['version']}.zip"
+    command "unzip -q #{Chef::Config[:file_cache_path]}/iTerm2-#{node['iterm2']['version']}.zip"
     cwd "/Applications"
     not_if { File.directory?("/Applications/iTerm.app") }
   end
