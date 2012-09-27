@@ -10,6 +10,7 @@
     "recipe[screen]",
     "recipe[pow]",
     "recipe[oh-my-zsh]",
+    "recipe[vim]",
 
     "recipe[mysql]",
 
