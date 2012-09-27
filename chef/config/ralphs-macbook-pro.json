@@ -9,6 +9,7 @@
     "recipe[rvm]",
     "recipe[screen]",
     "recipe[pow]",
+    "recipe[oh-my-zsh]",
 
     "recipe[mysql]",
 
