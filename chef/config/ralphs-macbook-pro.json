@@ -18,6 +18,7 @@
     "recipe[tmux]",
 
     "recipe[gitx]",
-    "recipe[googlechrome]"
+    "recipe[googlechrome]",
+    "recipe[sonos]"
   ]
 }
