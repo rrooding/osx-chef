@@ -1,7 +1,7 @@
 package 'macvim'
 
 execute 'curl -Lo- https://bit.ly/janus-bootstrap | bash' do
-  creates "#{ENV['HOME']}/.janus/"
+  creates "#{ENV['HOME']}/.vim/janus/"
 end
 
 template "#{ENV['HOME']}/.vimrc.before" do
