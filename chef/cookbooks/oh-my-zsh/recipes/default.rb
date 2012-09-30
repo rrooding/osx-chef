@@ -6,4 +6,7 @@ template "#{ENV['HOME']}/.zshrc" do
   source 'zshrc.erb'
 end
 
-execute "sudo chsh -s /bin/zsh #{ENV['USER']}"
+user ENV['USER'] do
+  action :modify
+  shell '/bin/zsh'
+end
