@@ -77,8 +77,8 @@ if [ "$?" -ne "0" ]; then
   clean_and_exit 1
 fi
 
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# Keep-alive: update existing `sudo` time stamp until 'go' has finished
+while true; do sudo -n true; sleep 30; echo 'sudo'; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Create /usr/local if it doesn't exist
 if [ ! -d "/usr/local" ]; then
