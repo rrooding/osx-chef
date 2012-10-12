@@ -7,6 +7,6 @@ unless File.directory?("/Applications/Mou.app")
   execute 'unpack Mou' do
     command "unzip -q #{Chef::Config[:file_cache_path]}/Mou.zip"
     cwd "/Applications"
-    not_if { File.directory?("/Applications/iTerm.app") }
+    not_if { File.directory?("/Applications/Mou.app") }
   end
 end
