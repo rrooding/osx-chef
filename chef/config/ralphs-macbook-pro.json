@@ -1,10 +1,12 @@
 {
   "run_list": [
+    "recipe[fonts]",
     "recipe[homebrew]",
     "recipe[apple-gcc42]",
     "recipe[xquartz]",
     "recipe[wget]",
     "recipe[ack]",
+    "recipe[ctags]",
     "recipe[tk]",
     "recipe[rvm]",
     "recipe[screen]",
