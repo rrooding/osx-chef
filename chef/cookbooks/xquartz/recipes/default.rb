@@ -6,7 +6,6 @@ end
 
 dmg_package "XQuartz" do
   source "http://xquartz.macosforge.org/downloads/SL/XQuartz-#{node['xquartz']['version']}.dmg"
-  checksum node['xquartz']['checksum']
   volumes_dir "XQuartz-#{node['xquartz']['version']}"
   type 'pkg'
   not_if { File.exists?("/opt/X11/bin/xquartz") }
