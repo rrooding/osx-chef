@@ -9,4 +9,12 @@ unless File.directory?("/Applications/iTerm.app")
     cwd "/Applications"
     not_if { File.directory?("/Applications/iTerm.app") }
   end
+
+  remote_file "#{Chef::Config[:file_cache_path]}/solarized-dark.itermcolors" do
+    source "https://raw.github.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors"
+  end
+
+  execute 'install Solarized Dark for iTerm2' do
+    command "open #{Chef::Config[:file_cache_path]}/solarized-dark.itermcolors"
+  end
 end
