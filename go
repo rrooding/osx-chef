@@ -78,7 +78,7 @@ if [ "$?" -ne "0" ]; then
 fi
 
 # Keep-alive: update existing `sudo` time stamp until 'go' has finished
-while true; do sudo -n true; sleep 30; echo 'sudo'; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do sudo -n true; sleep 30; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Create /usr/local if it doesn't exist
 if [ ! -d "/usr/local" ]; then
