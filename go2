@@ -2,8 +2,7 @@
 
 cat <<EOF |
   on isUIScriptingEnabled()
-    tell application "System Events" to set isEnabled to UI elements
-enabled
+    tell application "System Events" to set isEnabled to UI elements enabled
     return isEnabled
   end isUIScriptingEnabled
 
