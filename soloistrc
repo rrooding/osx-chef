@@ -25,5 +25,8 @@ recipes:
 - pivotal_workstation::gitx
 - pivotal_workstation::textmate
 
+# Config
+- pivotal_workstation::timemachine_preferences
+
 node_attributes:
   workspace_directory: Work
