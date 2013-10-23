@@ -6,7 +6,6 @@ recipes:
 # Development tools
 - sprout-osx-apps::ack
 - sprout-osx-apps::imagemagick
-- pivotal_workstation::mysql
 
 # OSX Apps
 - sprout-osx-apps::alfred
