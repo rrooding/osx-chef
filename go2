@@ -95,16 +95,13 @@ tell application "System Events" to tell process "App Store"
         # Click the confirmation
         click button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
 
-        # Wait for the password dialog
-        repeat until exists sheet 1
-          delay 0.2
+        # Wait until install has started
+        set bDesc to description of button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
+        repeat until bDesc is "Installing, Xcode"
+          delay 1
         end repeat
 
-        repeat until not exists sheet 1
-          delay 0.2
-        end repeat
-
-        log "installing?"
+        return true
       end if
     on error error_message
       return error_message
