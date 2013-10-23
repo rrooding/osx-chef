@@ -67,5 +67,31 @@ tell application "App Store"
 end tell
 
 doMenu("App Store", "Store", "Search")
+
+tell application "System Events" to tell process "App Store"
+  keystroke "XCode" & return
+
+  tell window "App Store"
+    try
+      repeat until exists button 1 of group 1 of group 4 of list 1 of group 2 of UI element 1 of scroll area 1
+        delay 0.2
+      end repeat
+      set bName to name of button 1 of group 1 of group 4 of list 1 of group 2 of UI element 1 of scroll area 1
+      log bName
+
+      if bName is "FREEFREE" then
+        tell group 1 of group 4 of list 1 of group 2 of UI element 1 of scroll area 1
+          click button "FREEFREE"
+          repeat until exists button "INSTALL APPFREE"
+            delay 0.2
+          end repeat
+          click button "INSTALL APPFREE"
+        end tell
+      end if
+    on error error_message
+      return error_message
+    end try
+  end tell
+end tell
 EOF
 osascript
