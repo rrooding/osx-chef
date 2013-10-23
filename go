@@ -3,7 +3,7 @@
 # Save current working directory
 pushd `pwd`
 
-soloist_version = 1.0.1
+soloist_version=1.0.1
 
 # Install the soloist gem
 if ! gem list -v=$soloist_version -i; then
