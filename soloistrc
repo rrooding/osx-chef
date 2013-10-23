@@ -3,8 +3,15 @@ recipes:
 - sprout-osx-base::homebrew
 - sprout-osx-base::workspace_directory
 
+# Development tools
+- sprout-osx-apps::ack
+
 # OSX Apps
+- sprout-osx-apps::alfred
+- sprout-osx-apps::caffeine
 - sprout-osx-apps::chrome
+- sprout-osx-apps::dropbox
+- sprout-osx-apps::firefox
 - sprout-osx-apps::skype
 
 node_attributes:
