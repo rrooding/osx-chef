@@ -5,7 +5,7 @@ script
 
 # Installation
 
-Execute the `go` script
+`\curl -L https://raw.github.com/rrooding/osx-chef/mavericks/go | bash`
 
 # Todo
 

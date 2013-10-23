@@ -16,21 +16,10 @@ mkdir -p ~/.soloist; cd ~/.soloist
 cat > soloistrc <<EOF
 cookbook_paths:
 - $PWD
+
 recipes:
-- pivotal_workstation::chrome
+- sprout-osx-base::bash_it
 EOF
-
-if [[ -d pivotal_workstation ]]; then
-  cd pivotal_workstation && git pull && cd ..
-else
-  git clone https://github.com/pivotal/pivotal_workstation.git
-fi
-
-if [[ -d dmg ]]; then
-  cd dmg && git pull && cd ..
-else
-  git clone https://github.com/opscode-cookbooks/dmg.git
-fi
 
 # Execute soloist
 soloist
