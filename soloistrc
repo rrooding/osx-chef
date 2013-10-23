@@ -23,6 +23,7 @@ recipes:
 - sprout-osx-apps::spotify
 - sprout-osx-apps::vlc
 - pivotal_workstation::gitx
+- pivotal_workstation::textmate
 
 node_attributes:
   workspace_directory: Work
