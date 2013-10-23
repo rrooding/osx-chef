@@ -1,7 +1,11 @@
 recipes:
 - pivotal_workstation::create_var_chef_cache
 - sprout-osx-base::homebrew
+- sprout-osx-base::workspace_directory
 
 # OSX Apps
 - sprout-osx-apps::chrome
 - sprout-osx-apps::skype
+
+node:
+  workspace_directory: Work
