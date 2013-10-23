@@ -21,6 +21,7 @@ recipes:
 - sprout-osx-apps::skype
 - sprout-osx-apps::spotify
 - sprout-osx-apps::vlc
+- pivotal_workstation::gitx
 
 node_attributes:
   workspace_directory: Work
