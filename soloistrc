@@ -16,6 +16,7 @@ recipes:
 - sprout-osx-apps::flux
 - sprout-osx-apps::google_drive
 - sprout-osx-apps::iterm2
+- sprout-osx-apps::java
 - sprout-osx-apps::sequelpro
 - sprout-osx-apps::sizeup
 - sprout-osx-apps::skype
