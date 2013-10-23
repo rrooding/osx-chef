@@ -1,0 +1,36 @@
+#!/bin/bash
+
+cat <<EOF |
+  on isUIScriptingEnabled()
+    tell application "System Events" to set isEnabled to UI elements
+enabled
+    return isEnabled
+  end isUIScriptingEnabled
+
+  on triggerAccessibilityDialog()
+    try
+      tell application "System Events"
+        tell process "Finder"
+          click menu bar 1
+        end tell
+      end tell
+    on error error_message
+      # Ignore error, it is only to trigger the OS X 10.9 popup
+    end try
+  end triggerAccessibilityDialog
+
+  on run
+    if not isUIScriptingEnabled() then
+      display dialog "Click OK to configure accessibility permissions"
+      triggerAccessibilityDialog()
+
+      log "waiting for accessibility to be enabled"
+      repeat while not isUISCriptingEnabled()
+        delay 1
+      end repeat
+    end if
+
+    log "ui scripting enabled"
+  end run
+EOF
+osascript

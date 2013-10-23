@@ -6,3 +6,7 @@ script
 # Installation
 
 Execute the `go` script
+
+# Todo
+
+- disable guest user
