@@ -73,21 +73,38 @@ tell application "System Events" to tell process "App Store"
 
   tell window "App Store"
     try
+      # Wait until the 'FREE' button exists
       repeat until exists button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
         delay 0.2
       end repeat
+
+      # Check if it is the Xcode install button
       set bDesc to description of button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
 
       if bDesc is "Install, Xcode, Free" then
         click button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
         
+        # Wait until the install button changed to the confirmation
+        # install button
         set bDesc to description of button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
         repeat until bDesc is "Confirm, Install, Xcode, Free"
           delay 0.2
           set bDesc to description of button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
         end repeat
 
+        # Click the confirmation
         click button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
+
+        # Wait for the password dialog
+        repeat until exists sheet 1
+          delay 0.2
+        end repeat
+
+        repeat until not exists sheet 1
+          delay 0.2
+        end repeat
+
+        log "installing?"
       end if
     on error error_message
       return error_message
