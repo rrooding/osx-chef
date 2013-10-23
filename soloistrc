@@ -7,5 +7,5 @@ recipes:
 - sprout-osx-apps::chrome
 - sprout-osx-apps::skype
 
-node:
+node_attributes:
   workspace_directory: Work
