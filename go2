@@ -1,35 +1,71 @@
 #!/bin/bash
 
 cat <<EOF |
-  on isUIScriptingEnabled()
-    tell application "System Events" to set isEnabled to UI elements enabled
-    return isEnabled
-  end isUIScriptingEnabled
+on isUIScriptingEnabled()
+  tell application "System Events" to set isEnabled to UI elements enabled
+  return isEnabled
+end isUIScriptingEnabled
 
-  on triggerAccessibilityDialog()
-    try
-      tell application "System Events"
-        tell process "Finder"
-          click menu bar 1
+on triggerAccessibilityDialog()
+  try
+    tell application "System Events"
+      tell process "Finder"
+        click menu bar 1
+      end tell
+    end tell
+  on error error_message
+    # Ignore error, it is only to trigger the OS X 10.9 popup
+  end try
+end triggerAccessibilityDialog
+
+on run
+  if not isUIScriptingEnabled() then
+    display dialog "Click OK to configure accessibility permissions"
+    triggerAccessibilityDialog()
+
+    log "waiting for accessibility to be enabled"
+    repeat while not isUISCriptingEnabled()
+      delay 1
+    end repeat
+  end if
+
+  log "ui scripting enabled"
+end run
+EOF
+osascript
+
+cat <<EOF |
+on doMenu(app_name, menu_name, item_name)
+  try
+    tell application app_name
+      activate
+    end tell
+
+    tell application "System Events"
+      tell process app_name
+        tell menu bar 1
+          tell menu bar item menu_name
+            tell menu menu_name
+              click menu item item_name
+            end tell
+          end tell
         end tell
       end tell
-    on error error_message
-      # Ignore error, it is only to trigger the OS X 10.9 popup
-    end try
-  end triggerAccessibilityDialog
+    end tell
 
-  on run
-    if not isUIScriptingEnabled() then
-      display dialog "Click OK to configure accessibility permissions"
-      triggerAccessibilityDialog()
+    return true
+  on error error_message
+    log error_message
+    return false
+  end try
+end doMenu
 
-      log "waiting for accessibility to be enabled"
-      repeat while not isUISCriptingEnabled()
-        delay 1
-      end repeat
-    end if
+tell application "App Store"
+  launch
+  set frontmost to true
+  delay 1 
+end tell
 
-    log "ui scripting enabled"
-  end run
+doMenu("App Store", "Store", "Search")
 EOF
 osascript
