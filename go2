@@ -100,7 +100,9 @@ tell application "System Events" to tell process "App Store"
         repeat until bDesc is "Installing, Xcode"
           delay 1
           set bDesc to description of button 1 of group 1 of group 3 of list 1 of group 2 of UI element 1 of scroll area 1 of group 1 of group 1
+          log bDesc
         end repeat
+        log "Woohoo"
 
         return true
       end if
