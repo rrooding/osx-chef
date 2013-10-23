@@ -11,13 +11,12 @@ else
 fi
 
 # Prepare the cookbooks
-#mkdir -p ~/.soloist; cd ~/.soloist
 if [[ -d .soloist ]]; then
   cd .soloist && git pull
 else
   git clone https://github.com/rrooding/osx-chef.git .soloist && cd .soloist
-  git checkout mavericks
 fi
+git checkout mavericks
 
 #cat > soloistrc <<EOF
 #cookbook_paths:

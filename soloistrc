@@ -1,2 +1,7 @@
 recipes:
-- sprout-osx-base::bash_it
+- pivotal_workstation::create_var_chef_cache
+- sprout-osx-base::homebrew
+
+# OSX Apps
+- sprout-osx-apps::chrome
+- sprout-osx-apps::skype
