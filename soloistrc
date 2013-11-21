@@ -13,7 +13,6 @@ recipes:
 - sprout-osx-apps::chrome
 - sprout-osx-apps::dropbox
 - sprout-osx-apps::firefox
-- sprout-osx-apps::flux
 - sprout-osx-apps::google_drive
 - sprout-osx-apps::iterm2
 - sprout-osx-apps::java
