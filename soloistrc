@@ -38,9 +38,7 @@ recipes:
 - workstation::mou
 - workstation::screenhero
 - workstation::sonos
-
-# Config
-- pivotal_workstation::timemachine_preferences
+- workstation::harvest
 
 node_attributes:
   workspace_directory: Work
