@@ -23,3 +23,8 @@ cookbook 'sprout-pivotal',
 cookbook 'osx',
   :git => 'git://github.com/pivotal-sprout/sprout.git',
   :path => 'osx'
+
+cookbook 'osx-chef',
+  :git => 'git://github.com/rrooding/osx-chef.gif',
+  :ref => 'mavericks',
+  :path => 'workstation'
