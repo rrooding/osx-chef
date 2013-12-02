@@ -29,7 +29,3 @@ cookbook 'sprout-pivotal',
 cookbook 'osx',
   :git => 'git://github.com/pivotal-sprout/sprout.git',
   :path => 'osx'
-
-cookbook 'chruby_install'
-cookbook 'ruby_install'
-cookbook 'rubies'
