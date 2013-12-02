@@ -1,3 +1,4 @@
+brew "libyaml"
 brew "chruby"
 brew "ruby-install"
 
@@ -34,6 +35,7 @@ end
 node['rubies']['list'].each do |ruby|
   execute "Installing #{ruby}" do
     command "ruby-install #{ruby}"
-    not_if { ::File.exists?("/opt/rubies/#{ruby.gsub(' ', '-')}/bin/ruby") }
+    user node['current_user']
+    not_if { ::File.exists?("#{node['sprout']['home']}/.rubies/#{ruby.gsub(' ', '-')}/bin/ruby") }
   end
 end
