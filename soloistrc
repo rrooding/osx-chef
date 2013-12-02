@@ -50,3 +50,8 @@ recipes:
 
 node_attributes:
   workspace_directory: Work
+  rubies:
+    list:
+      -
+        - ruby 1.9.3
+        - ruby 2.0.0
