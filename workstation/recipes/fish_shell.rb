@@ -7,5 +7,5 @@ end
 
 execute "Set fish as default shell" do
   command "chsh -s /usr/local/bin/fish"
-  if "grep -q fish /etc/shells"
+  only_if "grep -q fish /etc/shells"
 end
