@@ -13,6 +13,7 @@ recipes:
 - workstation::heroku_accounts
 - workstation::fish_shell
 - workstation::tmux
+- workstation::rubies
 - rubies
 
 # Databases
@@ -56,7 +57,3 @@ node_attributes:
       gcc_installer_checksum: 'df36aa87606feb99d0db9ac9a492819e'
   rubies:
     install_bundler: true
-    list:
-      -
-        - ruby 1.9.3-p484
-        - ruby 2.0.0-p353
