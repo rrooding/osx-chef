@@ -3,10 +3,13 @@ recipes:
 - sprout-osx-base::homebrew
 - sprout-osx-base::workspace_directory
 
-# Development tools
+# Libs
 - sprout-osx-apps::ack
 - sprout-osx-apps::imagemagick
 #- sprout-osx-apps::qt
+
+# Development tools
+- pivotal_workstation::heroku_toolbelt
 
 # Databases
 - pivotal_workstation::postgres
@@ -36,4 +39,3 @@ recipes:
 
 node_attributes:
   workspace_directory: Work
-  mysql_root_password: ''
