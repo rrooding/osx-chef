@@ -35,6 +35,7 @@ recipes:
 - sprout-osx-apps::gitx
 - sprout-osx-apps::textmate
 - sprout-osx-apps::flux
+- workstation::mou
 
 # Config
 - pivotal_workstation::timemachine_preferences
