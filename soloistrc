@@ -8,7 +8,7 @@ recipes:
 - sprout-osx-apps::imagemagick
 
 # OSX Apps
-- sprout-osx-apps::alfred
+#- sprout-osx-apps::alfred
 - sprout-osx-apps::caffeine
 - sprout-osx-apps::chrome
 - sprout-osx-apps::dropbox
