@@ -10,6 +10,7 @@ recipes:
 
 # Development tools
 - sprout-osx-apps::heroku_toolbelt
+- workstation::heroku_accounts
 - workstation::fish_shell
 
 # Databases
