@@ -21,8 +21,8 @@ recipes:
 - sprout-osx-apps::skype
 - sprout-osx-apps::spotify
 - sprout-osx-apps::vlc
-- pivotal_workstation::gitx
-- pivotal_workstation::textmate
+- sprout-osx-apps::gitx
+- sprout-osx-apps::textmate
 
 # Config
 - pivotal_workstation::timemachine_preferences
