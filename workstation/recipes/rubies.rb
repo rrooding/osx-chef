@@ -1,4 +1,5 @@
 brew "chruby"
+brew "ruby-install"
 
 %w{bash zsh}.each do |shell|
   execute "Add chruby to #{shell}" do
