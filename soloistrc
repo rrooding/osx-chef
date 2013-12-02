@@ -9,7 +9,7 @@ recipes:
 #- sprout-osx-apps::qt
 
 # Development tools
-- pivotal_workstation::heroku_toolbelt
+- sprout-osx-apps::heroku_toolbelt
 
 # Databases
 - pivotal_workstation::postgres
