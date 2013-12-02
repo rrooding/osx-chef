@@ -36,3 +36,4 @@ recipes:
 
 node_attributes:
   workspace_directory: Work
+  mysql_root_password: ''
