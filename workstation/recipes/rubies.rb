@@ -16,10 +16,6 @@ end
 node['rubies']['list'].each do |ruby|
   execute "Installing #{ruby}" do
     command "ruby-install #{ruby}"
-    not_if { ruby_installed?(ruby) }
+    not_if { ::File.exists?("/opt/rubies/#{ruby.gsub(' ', '-')}/bin/ruby") }
   end
-end
-
-def ruby_installed?(ruby)
-  ::File.exists?("/opt/rubies/#{ruby.gsub(' ', '-')}/bin/ruby")
 end
