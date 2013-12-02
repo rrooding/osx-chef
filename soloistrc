@@ -42,5 +42,8 @@ recipes:
 - workstation::harvest
 - workstation::transmit
 
+# Settings
+- workstation-settings::tmux
+
 node_attributes:
   workspace_directory: Work
