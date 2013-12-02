@@ -6,6 +6,6 @@ execute "Add fish to /etc/shells" do
 end
 
 execute "Set fish as default shell" do
-  command "chsh -s /usr/local/bin/fish"
+  command "sudo chsh -s /usr/local/bin/fish #{node['current_user']}"
   only_if "grep -q fish /etc/shells"
 end
