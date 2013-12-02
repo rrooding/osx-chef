@@ -1,7 +1,7 @@
 site "http://community.opscode.com/api/v1"
 
-#cookbook 'workstation',
-#  :path => 'workstation'
+cookbook 'workstation',
+  :path => 'workstation'
 
 cookbook 'sprout-osx-base',
   :git => 'git://github.com/pivotal-sprout/sprout.git',
