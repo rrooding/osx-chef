@@ -13,6 +13,7 @@ recipes:
 - workstation::heroku_accounts
 - workstation::fish_shell
 - workstation::tmux
+- workstation::rubies
 
 # Databases
 - pivotal_workstation::postgres
@@ -49,3 +50,9 @@ recipes:
 
 node_attributes:
   workspace_directory: Work
+  rubies:
+    install_bundler: true
+    list:
+      -
+        - ruby 1.9.3-p484
+        - ruby 2.0.0-p353
