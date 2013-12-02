@@ -10,6 +10,7 @@ recipes:
 
 # Databases
 - pivotal_workstation::postgres
+- pivotal_workstation::redis
 
 # OSX Apps
 #- sprout-osx-apps::alfred
