@@ -6,11 +6,12 @@ recipes:
 # Development tools
 - sprout-osx-apps::ack
 - sprout-osx-apps::imagemagick
-- sprout-osx-apps::qt
+#- sprout-osx-apps::qt
 
 # Databases
 - pivotal_workstation::postgres
 - pivotal_workstation::redis
+- pivotal_workstation::mysql
 
 # OSX Apps
 #- sprout-osx-apps::alfred
