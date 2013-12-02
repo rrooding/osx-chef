@@ -13,7 +13,7 @@ recipes:
 - workstation::heroku_accounts
 - workstation::fish_shell
 - workstation::tmux
-- workstation::rubies
+- rubies
 
 # Databases
 - pivotal_workstation::postgres
