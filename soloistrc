@@ -12,6 +12,7 @@ recipes:
 - sprout-osx-apps::heroku_toolbelt
 - workstation::heroku_accounts
 - workstation::fish_shell
+- workstation::tmux
 
 # Databases
 - pivotal_workstation::postgres
