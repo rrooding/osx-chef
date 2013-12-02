@@ -50,6 +50,9 @@ recipes:
 
 node_attributes:
   workspace_directory: Work
+  build_essential:
+    osx:
+      gcc_installer_url:
   rubies:
     install_bundler: true
     list:
