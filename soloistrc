@@ -20,6 +20,7 @@ recipes:
 - workstation::fish_shell
 - workstation::tmux
 - workstation::rubies
+- workstation::janus
 
 # Databases
 - pivotal_workstation::postgres
