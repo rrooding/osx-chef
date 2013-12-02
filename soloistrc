@@ -13,6 +13,7 @@ recipes:
 - workstation::heroku_accounts
 - workstation::fish_shell
 - workstation::tmux
+- workstation-settings::rubies
 - workstation::rubies
 
 # Databases
