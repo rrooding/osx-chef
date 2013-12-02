@@ -39,6 +39,7 @@ recipes:
 - workstation::screenhero
 - workstation::sonos
 - workstation::harvest
+- workstation::transmit
 
 node_attributes:
   workspace_directory: Work
