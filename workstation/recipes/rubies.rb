@@ -13,6 +13,14 @@ brew "ruby-install"
   end
 end
 
+remote_file "/usr/local/opt/chruby/share/chruby/chruby.fish" do
+  source "https://gist.github.com/rrooding/7760489/raw/01f70afbb23ebcd822042364757de283b84a60c0/fish-chruby-chruby.fish"
+end
+
+remote_file "/usr/local/opt/chruby/share/chruby/auto.fish" do
+  source "https://gist.github.com/rrooding/7760489/raw/cbf1766e8f546c4be6c7d3be7f678070f94824ec/fish-chruby-auto.fish"
+end
+
 node['rubies']['list'].each do |ruby|
   execute "Installing #{ruby}" do
     command "ruby-install #{ruby}"

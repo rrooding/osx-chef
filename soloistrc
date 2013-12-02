@@ -3,6 +3,12 @@ recipes:
 - sprout-osx-base::homebrew
 - sprout-osx-base::workspace_directory
 
+# Settings
+- workstation-settings::tmux
+- workstation-settings::ack
+- workstation-settings::fish
+- workstation-settings::rubies
+
 # Libs
 - sprout-osx-apps::ack
 - sprout-osx-apps::imagemagick
@@ -13,7 +19,6 @@ recipes:
 - workstation::heroku_accounts
 - workstation::fish_shell
 - workstation::tmux
-- workstation-settings::rubies
 - workstation::rubies
 
 # Databases
@@ -43,11 +48,6 @@ recipes:
 - workstation::sonos
 - workstation::harvest
 - workstation::transmit
-
-# Settings
-- workstation-settings::tmux
-- workstation-settings::ack
-- workstation-settings::fish
 
 node_attributes:
   workspace_directory: Work
