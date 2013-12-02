@@ -3,5 +3,5 @@ execute 'curl -Lo- https://bit.ly/janus-bootstrap | bash' do
 end
 
 template "#{node['sprout']['home']}/.vimrc.before" do
-  source "vimrc.before"
+  source "vimrc.before.erb"
 end
