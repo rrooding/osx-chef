@@ -44,6 +44,7 @@ recipes:
 
 # Settings
 - workstation-settings::tmux
+- workstation-settings::ack
 
 node_attributes:
   workspace_directory: Work
