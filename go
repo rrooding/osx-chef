@@ -20,7 +20,7 @@ if [[ -d .soloist ]]; then
 else
   git clone https://github.com/rrooding/osx-chef.git .soloist && cd .soloist
 fi
-git checkout mavericks
+git checkout master
 
 # Execute soloist
 soloist

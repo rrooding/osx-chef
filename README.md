@@ -14,4 +14,4 @@ Don't forget to start up Xcode once it's installed so that you can agree to the 
 
 [You may want to modify your Energy Saver preferences (**System Preferences &rarr; Energy Saver &rarr; Computer Sleep &rarr; 3hrs**) because soloist usually takes 2-3 hours to complete.]
 
-	\curl -L https://raw.github.com/rrooding/osx-chef/mavericks/go | bash
+	\curl -L https://raw.github.com/rrooding/osx-chef/master/go | bash
