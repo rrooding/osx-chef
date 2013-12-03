@@ -52,6 +52,10 @@ recipes:
 
 node_attributes:
   workspace_directory: Work
+  git:
+    user:
+      name: Ralph Rooding
+      email: ralph@ralphrooding.com
   rubies:
     list:
       - ruby 1.9.3-p484
