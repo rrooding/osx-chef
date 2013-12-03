@@ -8,6 +8,7 @@ recipes:
 - workstation-settings::ack
 - workstation-settings::fish
 - workstation-settings::rubies
+- workstation-settings::git
 
 # Libs
 - sprout-osx-apps::ack
