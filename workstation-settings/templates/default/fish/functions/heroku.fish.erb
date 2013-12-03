@@ -1,0 +1,20 @@
+function hl; heroku login; end
+
+function hpsql; heroku pg:psql -a $argv; end
+function hrun; heroku run $argv; end
+function hbun; hrun bundle exec $argv; end
+
+function hcon; hbun rails console -a $argv; end
+function hconsole; hcon $argv; end
+
+function hconf; heroku config -a $argv; end
+
+function hrake; hbun rake $argv; end
+
+function hlog; heroku logs -a $argv; end
+function htail; heroku logs -t -a $argv; end
+
+function hbackups; heroku pgbackups --app $argv; end
+function hdblatest; heroku pgbackups:url -a $argv; end
+function hdburl; heroku pgbackups:url $argv; end
+function hdbdump; curl -o dump.dump `hdblatest $argv`; end

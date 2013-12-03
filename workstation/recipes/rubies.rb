@@ -1,3 +1,4 @@
+brew "openssl"
 brew "libyaml"
 brew "chruby"
 brew "ruby-install"
