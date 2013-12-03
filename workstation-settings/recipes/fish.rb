@@ -12,7 +12,7 @@ template "#{node['sprout']['home']}/.config/fish/functions/fish_prompt.fish" do
   source "fish/functions/fish_prompt.fish.erb"
 end
 
-%w{git heroku bundler}.each do |fish_config|
+%w{git heroku bundler vim}.each do |fish_config|
   template "#{node['sprout']['home']}/.config/fish/plugins/#{fish_config}.fish" do
     source "fish/plugins/#{fish_config}.fish.erb"
   end
