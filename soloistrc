@@ -50,6 +50,7 @@ recipes:
 - workstation::sonos
 - workstation::harvest
 - workstation::transmit
+- workstation::alfred
 
 node_attributes:
   workspace_directory: Work
