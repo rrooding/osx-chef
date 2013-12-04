@@ -46,6 +46,7 @@ recipes:
 - sprout-osx-apps::gitx
 - sprout-osx-apps::textmate
 - sprout-osx-apps::flux
+- workstation::gitx_cli
 - workstation::mou
 - workstation::screenhero
 - workstation::sonos
