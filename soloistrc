@@ -9,6 +9,7 @@ recipes:
 - workstation-settings::fish
 - workstation-settings::rubies
 - workstation-settings::git
+- workstation-settings::directories
 
 # Libs
 - sprout-osx-apps::ack
