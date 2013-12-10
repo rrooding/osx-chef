@@ -48,6 +48,7 @@ recipes:
 - sprout-osx-apps::textmate
 - sprout-osx-apps::flux
 - sprout-osx-apps::google_voice_and_video
+- sprout-osx-apps::evernote
 - workstation::gitx_cli
 - workstation::mou
 - workstation::screenhero
