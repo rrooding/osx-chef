@@ -1,0 +1,5 @@
+function vvpdb
+  curl -o production.dump (heroku pgbackups:url -a portal-production)
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -d viaviela_portal_development production.dump
+  rm production.dump
+end
