@@ -49,7 +49,7 @@ recipes:
 - sprout-osx-apps::flux
 - sprout-osx-apps::google_voice_and_video
 - sprout-osx-apps::evernote
-- sprout-osx-apps::virtualbox
+- sprout-osx-apps::vagrant
 - workstation::gitx_cli
 - workstation::mou
 - workstation::screenhero
