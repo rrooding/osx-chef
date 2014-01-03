@@ -6,6 +6,7 @@ function gpor; git push -u origin $argv; end
 function gl; git pull $argv; end
 
 function gco; git checkout $argv; end
+function gct; git checkout -b $argv origin/$argv; end
 function gcd; git checkout develop; end
 function gcm; git checkout master; end
 function gcb; git checkout -b $argv; end
