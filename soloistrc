@@ -24,6 +24,7 @@ recipes:
 - workstation::tmux
 - workstation::rubies
 - workstation::janus
+- workstation::maven
 
 # Databases
 - pivotal_workstation::postgres
