@@ -15,7 +15,7 @@ template "#{node['sprout']['home']}/.config/fish/functions/fish_prompt.fish" do
   user node['current_user']
 end
 
-%w{git heroku bundler vim custom}.each do |fish_config|
+%w{git chef heroku bundler vim custom}.each do |fish_config|
   template "#{node['sprout']['home']}/.config/fish/plugins/#{fish_config}.fish" do
     source "fish/plugins/#{fish_config}.fish.erb"
     user node['current_user']
