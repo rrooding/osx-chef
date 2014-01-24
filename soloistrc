@@ -30,6 +30,7 @@ recipes:
 - pivotal_workstation::postgres
 - pivotal_workstation::redis
 - pivotal_workstation::mysql
+- pivotal_workstation::mongodb
 
 # OSX Apps
 - sprout-osx-apps::caffeine
