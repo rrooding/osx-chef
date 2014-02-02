@@ -58,6 +58,7 @@ recipes:
 - workstation::harvest
 - workstation::transmit
 - workstation::alfred
+- workstation::wunderlist
 
 node_attributes:
   workspace_directory: Work
